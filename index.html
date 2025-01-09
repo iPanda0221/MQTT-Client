@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Chat App with MQTT</title>
+    <script src="paho-mqtt.js"></script>
+    <script src="mqtt-service.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+      }
+
+      .chat-header {
+        background-color: #0078d7;
+        color: white;
+        padding: 15px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .chat-header input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 200px;
+      }
+
+      .chat-header button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #0056a3;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .chat-header button:hover {
+        background-color: #003f7d;
+      }
+
+      .chat-body {
+        padding: 20px;
+        max-height: 80vh;
+        overflow-y: auto;
+        background-color: white;
+        border: 1px solid #ddd;
+      }
+
+      .chat-message {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+      .chat-message span {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 12px;
+        color: #555;
+      }
+
+      .chat-message .message-content {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="chat-header">
+      <input type="text" id="nameInput" placeholder="Enter your name" />
+      <input type="text" id="messageInput" placeholder="Type a message" />
+      <button onclick="sendMessage()">Send</button>
+    </header>
+    <main class="chat-body" id="chatBody">
+      <!-- Messages will appear here -->
+    </main>
+  </body>
+</html>
